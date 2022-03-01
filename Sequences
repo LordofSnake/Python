@@ -1,0 +1,85 @@
+from time import sleep
+w = input("sequence:")
+cont = True
+
+while cont == True:
+
+  if w == "f":
+    w0 = 0
+    w1 = 1
+    for i in range(25):
+      print(w1)
+      w0 += w1
+      print(w0)
+      w1 += w0
+    cont = False
+  
+  if w == "d" :
+    w2 = 1
+    for i in range(25):
+      print(w2)
+      w2 += w2
+    cont = False
+  
+  if w == "pi" :
+    print("3,141592655339793238462643383279502884197")
+    print("16939937510582097494459210781640628620899")
+    print("52803482534219821480865132823066470938446")
+    print("09550582231725359408128481117450284102701")
+    print("93852110555964462294895493038109756659334")
+    print("46128475648233786783165271201909145648566")
+    print("923460...") 
+    cont = False
+
+  if w == "s":
+    w7  = int(input("num:"))
+    if w7 > 0:
+      while w7 != 1:
+        if w7 % 2 == 0:
+          w7 = w7 // 2
+        elif w7 % 2 == 1:
+          w7 *= 3
+          w7 += 1
+        print(w7)
+      for i in range(1):
+        print("4")
+        print("2")
+      print("...")  
+    elif w7 <= "0":
+      print("nope")
+    cont = False
+  
+  if w == "help":
+    print("help - liste des commandes")
+    print("f - suite de fibonacci")
+    print("d - suite des doubles")
+    print("de - decompostion en nombres premiers")
+    print("s - conjecture de syracuse")
+    w = input("sequence:")
+
+  if w == "de":
+    prime = []
+    bob = 1
+    bob1 = 2
+    bob2 = 0
+    num = int(input("nombre:"))
+    while num % bob1 == 0:
+      num = num // bob1
+      prime.append(bob1)
+    while num > 1:
+      bob += 2
+      while num % bob == 0:
+        num = num // bob
+        prime.append(bob)
+    
+    for i in prime:
+      bob2 += 1
+    if bob2 > 1:
+      print(prime)
+    elif bob2 == 1:
+      print("Your number is a prime number!")
+    cont = False
+
+sleep(1)
+print()
+print("Script Ended")
